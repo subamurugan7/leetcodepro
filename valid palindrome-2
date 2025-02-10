@@ -1,0 +1,24 @@
+VALID PALINDROME-II
+
+
+https://leetcode.com/problems/valid-palindrome-ii/
+
+
+class Solution {
+    public boolean validPalindrome(String s) {
+        return mypailindrome(s,0,s.length()-1,1);
+    }
+    private boolean mypailindrome(String s,int f,int e,int deleate){
+      while(f<e){
+        if(s.charAt(f)==s.charAt(e)){
+            f++;
+            e--;
+        }
+        else{
+            if(deleate==0) return false;
+            return mypailindrome(s,f+1,e,0) ||mypailindrome(s,f,e-1,0);
+        }  
+      }
+     return true;
+    }
+}
