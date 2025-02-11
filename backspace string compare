@@ -1,0 +1,45 @@
+BACKSPACE STRING COMPARE
+
+https://leetcode.com/problems/backspace-string-compare/?envType=problem-list-v2&envId=string
+
+
+class Solution {
+    public boolean backspaceCompare(String s, String t) {
+        int s1 = s.length() - 1;
+        int t1 = t.length() - 1;
+        
+        while (s1 >= 0 || t1 >= 0) {
+            s1 = resolve(s, s1);
+            t1 = resolve(t, t1);
+            
+            if (s1 >= 0 && t1 >= 0 && s.charAt(s1) != t.charAt(t1)) {
+                return false;
+            }
+            
+            if ((s1 >= 0) != (t1 >= 0)) { 
+                return false;
+            }
+
+            s1--; 
+            t1--;
+        }
+        return true;
+    }
+
+    private int resolve(String a, int p) {
+        int back = 0;
+        
+        while (p >= 0) {
+            if (a.charAt(p) == '#') {
+                back++;
+            } else if (back > 0) {
+                back--;
+            } else {
+                break;
+            }
+            p--;
+        }
+        
+        return p;
+    }
+}
