@@ -10,7 +10,7 @@ class Solution {
                 carry += num[i];
                 i--;
             }
-            result.add(0, carry % 10);  // Insert at the beginning
+            result.add(0, carry % 10); 
             carry /= 10;
         }
         return result; 
