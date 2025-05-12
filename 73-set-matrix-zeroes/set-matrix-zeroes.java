@@ -6,7 +6,7 @@ class Solution {
         boolean[] row = new boolean[m];
         boolean[] col = new boolean[n];
 
-        // Step 1: Record rows and columns that need to be zeroed
+        
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 if (matrix[i][j] == 0) {
@@ -16,7 +16,7 @@ class Solution {
             }
         }
 
-        // Step 2: Set the recorded rows and columns to zero
+
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 if (row[i] || col[j]) {
