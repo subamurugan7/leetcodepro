@@ -1,0 +1,13 @@
+class Solution {
+    public int finalValueAfterOperations(String[] operations) {
+       int count = 0;
+        for (String op : operations) {
+            if (op.equals("++X") || op.equals("X++")) {
+                count++;
+            } else {
+                count--;
+            }
+        }
+        return count;
+    }
+}
