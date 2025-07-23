@@ -10,7 +10,6 @@
  */
 class Solution {
     public ListNode deleteDuplicates(ListNode head) {
-        // Dummy node before head to handle edge cases
         ListNode dummy = new ListNode(-1);
         dummy.next = head;
 
