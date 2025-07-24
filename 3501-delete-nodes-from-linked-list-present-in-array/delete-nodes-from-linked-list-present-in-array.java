@@ -14,7 +14,7 @@ class Solution {
         for (int num : nums) {
             set.add(num);
         }
-        ListNode dummy = new ListNode(0);
+        ListNode dummy = new ListNode(-1);
         dummy.next = head;
         ListNode prev = dummy;
         ListNode curr = head;
