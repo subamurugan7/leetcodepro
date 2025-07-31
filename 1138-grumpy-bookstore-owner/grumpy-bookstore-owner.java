@@ -7,16 +7,16 @@ class Solution {
         }
         int curr = 0;  
         int extra = 0;
-        int low = 0, high = 0;
-        while (high < n) {
-            if (grumpy[high] == 1) curr += customers[high];
-            if (high >= low + minutes) {
-                if (grumpy[low] == 1) curr -= customers[low];
-                low++;
+        int left= 0, right = 0;
+        while (right< n) {
+            if (grumpy[right] == 1) curr += customers[right];
+            if (right >=left+ minutes) {
+                if (grumpy[left] == 1) curr -= customers[left];
+                left++;
             }
 
             extra = Math.max(extra, curr);
-            high++;
+            right++;
         }
 
         return ans + extra;
