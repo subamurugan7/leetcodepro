@@ -1,24 +1,23 @@
 class Solution {
     public int maxSatisfied(int[] customers, int[] grumpy, int minutes) {
-        int n = grumpy.length;
         int ans = 0;
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < grumpy.length; i++) {
             if (grumpy[i] == 0) ans += customers[i];
         }
         int curr = 0;  
         int extra = 0;
         int left= 0, right = 0;
-        while (right< n) {
-            if (grumpy[right] == 1) curr += customers[right];
+        while (right< grumpy.length) {
+            if (grumpy[right] == 1) ans += customers[right];
             if (right-left+1 > minutes) {
-                if (grumpy[left] == 1) curr -= customers[left];
+                if (grumpy[left] == 1) ans -= customers[left];
                 left++;
             }
 
-            extra = Math.max(extra, curr);
+            extra = Math.max(extra, ans);
             right++;
         }
 
-        return ans + extra;
+        return  extra;
     }
 }
