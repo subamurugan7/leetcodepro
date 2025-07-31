@@ -10,7 +10,7 @@ class Solution {
         int left= 0, right = 0;
         while (right< n) {
             if (grumpy[right] == 1) curr += customers[right];
-            if (right >=left+ minutes) {
+            if (right-left+1 > minutes) {
                 if (grumpy[left] == 1) curr -= customers[left];
                 left++;
             }
