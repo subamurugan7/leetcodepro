@@ -15,9 +15,9 @@ class Solution {
             int mid = left + (right - left)/2;
             if(istrue(piles, h, mid)){
                 ans = mid;
-                right = mid - 1; // try smaller speed
+                right = mid - 1; 
             } else {
-                left = mid + 1;  // speed too small
+                left = mid + 1;  
             }
         }
 
@@ -27,8 +27,8 @@ class Solution {
     private boolean istrue(int[] piles, int h, int speed){
         int sum = 0;
         for(int num : piles){
-            sum += (num + speed - 1) / speed; // ceil division
-            if(sum > h) return false;          // early exit
+            sum += (num + speed - 1) / speed; 
+            if(sum > h) return false;          
         }
         return true;
     }
