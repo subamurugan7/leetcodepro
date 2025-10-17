@@ -11,17 +11,12 @@ class Solution {
         
         for (int i = 0; i < nums1.length; i++) {
             long diff = nums2[i] - nums1[i];
-            
-            // Check divisibility
             if (k != 0 && diff % k != 0) return -1;
             
             if (diff > 0) pos += diff;
-            else neg += -diff; // sum of absolute negatives
+            else neg += -diff; 
         }
-        
-        // Total positives must equal total negatives
         if (pos != neg) return -1;
-        
         return pos / k;
     }
 }
