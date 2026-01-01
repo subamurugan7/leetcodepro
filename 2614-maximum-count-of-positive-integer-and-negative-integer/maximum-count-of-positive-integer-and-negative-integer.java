@@ -3,16 +3,16 @@ class Solution {
        int poscount=0;
        int negcount=0;
        for(int i=0;i<nums.length;i++){
-          if(nums[i]>0){
-            negcount++;
-          }
-          else if(nums[i]<0){
+        if(nums[i]>0){
             poscount++;
-          }
+        }
+        else if(nums[i]<0){
+            negcount++;
+        }
        } 
-       if(poscount<=negcount){
-        return negcount;
+       if(poscount>=negcount){
+        return poscount;
        }
-       return poscount;
+       return negcount;
     }
 }
