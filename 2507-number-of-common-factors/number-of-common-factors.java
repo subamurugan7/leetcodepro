@@ -1,16 +1,16 @@
 class Solution {
     public int commonFactors(int a, int b) {
-        int smallno;
-        if(b>a){
-         smallno=a;
+        int minval;
+       if(a>b){
+         minval=b;
+       } 
+       minval=a;
+       int count=0;
+       for(int i=1;i<=minval;i++){
+        if(a%i==0&&b%i==0){
+            count++;
         }
-        smallno=b;
-        int count=0;
-        for(int i=1;i<=smallno;i++){
-            if(a%i==0&&b%i==0){
-                count++;
-            }
-        }
-        return count;
+       }
+     return count;
     }
 }
